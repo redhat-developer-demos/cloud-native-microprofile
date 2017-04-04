@@ -1,0 +1,18 @@
+logger:
+    level: INFO
+swarm:
+  bind:
+    address: 127.0.0.1
+  port:
+    offset: 0
+  ds:
+    name: MyDemoDS
+  deployment:
+    service1.war:
+      web:
+        login-config:
+          auth-method: KEYCLOAK
+        security-constraints:
+          - url-pattern: /remote/invoke-protected
+            methods: [GET]
+            roles: [USERS]   

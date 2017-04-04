@@ -1,0 +1,7 @@
+{
+  "realm": "microprofile",
+  "auth-server-url": "http://localhost:8083/auth",
+  "ssl-required": "external",
+  "resource": "service2",
+  "public-client": true
+}

@@ -1,0 +1,16 @@
+logger:
+    level: INFO
+swarm:
+  bind:
+    address: 127.0.0.1
+  port:
+    offset: 1
+  deployment:
+    service2.war:
+      web:
+        login-config:
+          auth-method: KEYCLOAK
+        security-constraints:
+          - url-pattern: /protected
+            methods: [GET]
+            roles: [USERS] 
