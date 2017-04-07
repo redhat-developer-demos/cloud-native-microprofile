@@ -54,7 +54,11 @@ public class RemoteEndpoint {
 			url = "http://" + helloService.getAddress() + ":" + helloService.getPort();
 		}
 
-		String helloResponse = HystrixFeign.builder().target(HelloApi.class, url, () -> "Hello fallback mesage")
+		String helloResponse = HystrixFeign.builder()
+				.target(
+						HelloApi.class, 
+						url, 
+						() -> "Hello fallback mesage")
 				.hello();
 		return Response.ok("I'm service1 and this is the response from service2: " + helloResponse).build();
 	}
